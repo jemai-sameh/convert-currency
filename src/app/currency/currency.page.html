@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Currency Rate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" offset="4">
+        <img src="../../assets/currency.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="4" offset="4">
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Edit Currencies</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Currency 1</ion-label>
+            <ion-input disabled [value]="currency1"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Currency 2</ion-label>
+            <ion-select value="TND">
+               <ion-select-option *ngFor="let currency of currencies" [value]="currency">{{ currency }} </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div class="ion-margin-vertical">
+            <ion-button expand="block"  (click)="onConvert()" color="tertiary">Convert</ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
